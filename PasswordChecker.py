@@ -9,10 +9,10 @@ def CheckPassword(password):
     unsafeCount = 0
     safeCount = 0
     j = 0
-    
+
     #Check for password's length
     if len(password) < 8:
-        print("Password unsafe: less than 8 characters detected.")
+        print("!! Password unsafe: less than 8 characters detected. !!")
         unsafeCount += 1
     else:
         safeCount += 1
@@ -23,7 +23,7 @@ def CheckPassword(password):
             numsCount += 1
 
     if numsCount < 4:
-        print("Password unsafe: less than 4 integers detected.")
+        print("!! Password unsafe: less than 4 integers detected. !!")
         unsafeCount += 1
     else:
         safeCount += 1
@@ -33,7 +33,7 @@ def CheckPassword(password):
         if i.isupper():
             upperCases += 1
     if upperCases < 3:
-        print("Password unsafe: less than 3 capitalised characters detected")
+        print("!! Password unsafe: less than 3 capitalised characters detected !!")
         unsafeCount += 1
     else:
         safeCount += 1
@@ -47,11 +47,11 @@ def CheckPassword(password):
 
     if specialChars < 1:
         unsafeCount += 1
-        print("Password unsafe: no special characters detected.")
+        print("!! Password unsafe: no special characters detected. !!")
     else:
         safeCount += 1
 
-    print(f"Safety percentage: {int((safeCount / 4) * 100)}%")
+    print(f"------------ Safety percentage: {int((safeCount / 4) * 100)}% ------------" )
     
 
 CheckPassword(password)
